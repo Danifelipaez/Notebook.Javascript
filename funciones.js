@@ -68,3 +68,34 @@ function SumWithSideEffect(a){
     return total
 }
 
+
+//---------------------------------------
+//ArrowFunctions
+
+const greeting = function(name){ //old
+    return `Hi, ${name}`
+}
+
+const newGreeting = (name)=>{ //arrow function
+    return `Hi, ${name}`
+}
+
+
+//Arrow Function - implicit return
+const newGreetingImplicit = name =>`Hi, ${name}`
+const newGreetingImplicitWithTwoParameters = (name,lastname) =>`Hi, I'm ${name} ${lastname}`
+
+//Lexical Binding
+
+const fictionalCharacter = {
+    name: 'Uncle Ben',
+    messageWithTradicionalFunction: function (message){
+        console.log(`${this.name} says: ${message}`)
+    },
+    messageWithArrowFunction: (message)=>{
+        console.log(`${fictionalCharacter.name} says: ${message}`)
+    }
+}
+
+fictionalCharacter.messageWithTradicionalFunction('With great power, comes great responsability')
+fictionalCharacter.messageWithArrowFunction('Beware of Doctor Octopus. ')
