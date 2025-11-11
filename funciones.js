@@ -19,5 +19,52 @@ console.log(sqrt(sum(resta(b,a),rnd),2)) //Resta b-a, le suma un random de 1-9 y
 
 //funciones puras
 
+/*
+    Una función pura es una función que:
+    1. Siempre produce el mismo resultado dado el mismo conjunto de argumentos.
+    2. No tiene efectos secundarios, es decir, no modifica ninguna variable externa, ni depende de variables externas que puedan cambiar.
+*/
 
+//Efectos secundarios que hacen impura una función
+
+/*
+    1. Modificar variables globales
+    2. Modificar parámetros
+    3. Soliticudes HTTP
+    4. Imprimir mensajes en pantalla o consola
+    5. Manipulación del DOM
+    6. Obtener la hora actual
+*/
+
+//Ejemplo
+function summa (a,b){
+    return a+b
+}
+
+function square(x){
+    return x*x
+}
+
+function addTen (y){
+    return y+10
+}
+
+const number =5
+const finalResult = addTen(square(number)) //combinacion de dos funciones puras, sigue siendo pura
+console.log(finalResult)
+
+
+
+//Ejemplos de impuras
+function summ (a,b){
+    console.log('A: ',a)
+    return a+b
+}
+
+let total = 0
+
+function SumWithSideEffect(a){
+    total += a
+    return total
+}
 
