@@ -93,7 +93,7 @@ const fictionalCharacter = {
         console.log(`${this.name} says: ${message}`)
     },
     messageWithArrowFunction: (message)=>{
-        console.log(`${fictionalCharacter.name} says: ${message}`)
+        console.log(`${fictionalCharacter.name} says: ${message}`) //El this. es global en estas funciones, como name se declaró local, no lo reconoce.
     }
 }
 
